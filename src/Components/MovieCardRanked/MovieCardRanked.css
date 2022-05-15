@@ -1,0 +1,32 @@
+.movieCardRanked {
+  height: 10vw;
+  display: flex;
+  flex-direction: row;
+  flex: 0 0 auto;
+  border-radius: 25px;
+}
+
+.movieCardRankedImage {
+  height: 100%;
+  width: 7vw;
+  object-fit: cover;
+  border-radius: 2%;
+  z-index: 5;
+  margin-left: -15%;
+}
+
+.matchingPercentage {
+  color: green;
+  font-weight: bold;
+}
+
+.movieNumber {
+  font-size: 13vw;
+  font-weight: bold;
+  padding: 0;
+  -webkit-text-stroke: 5px gray;
+  display: flex;
+  align-items: center;
+
+  z-index: 0;
+}
