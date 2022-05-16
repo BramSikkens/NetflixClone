@@ -1,5 +1,6 @@
 import "./MovieCard.css";
 
+
 export default function MovieCard({ imgUrl }) {
   return (
     <div className="movieCard">

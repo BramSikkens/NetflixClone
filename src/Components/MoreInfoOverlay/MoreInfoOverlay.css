@@ -1,0 +1,33 @@
+.MoreInfoOverlay {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.549);
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+
+  overflow: scroll;
+}
+
+.MoreInfoContainer {
+  height: 1200px;
+  width: 800px;
+  background-color: #131212;
+  color: white;
+  margin-top: 2%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 4px rgb(0 0 0);
+}
+
+.MoreInfoContainer img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.MoreInfoContent {
+  padding: 4%;
+}
