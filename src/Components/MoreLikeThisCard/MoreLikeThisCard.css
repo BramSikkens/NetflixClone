@@ -1,0 +1,28 @@
+.MoreLikeThisCard {
+  background-color: #4b4a4a;
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin-right: 3%;
+  margin-bottom: 3%;
+}
+
+.MoreLikeThisCardContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.MoreLikeThisCardDescription {
+  color: white;
+  padding: 3%;
+  background-color: #4b4a4a;
+  font-size: 0.9rem;
+  line-height: 1.3rem;
+}
+
+.MoreLikeThisCardTitle {
+  font-weight: bold;
+  color: white;
+  font-size: 1.3rem;
+}

@@ -12,7 +12,7 @@
 }
 
 .MoreInfoContainer {
-  height: 1200px;
+  height: fit-content;
   width: 800px;
   background-color: #131212;
   color: white;
@@ -30,4 +30,10 @@
 
 .MoreInfoContent {
   padding: 4%;
+}
+
+.MoreLikeThisCardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
