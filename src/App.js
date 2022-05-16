@@ -30,7 +30,7 @@ function App() {
       {/* Show the modal when a `backgroundLocation` is set */}
       {state?.backgroundLocation && (
         <Routes>
-          <Route path="/test" element={<MoreInfoOverlay />} />
+          <Route path="/test/:id" element={<MoreInfoOverlay />} />
         </Routes>
       )}
     </div>

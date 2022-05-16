@@ -34,10 +34,12 @@ export default function MovieRow({ title, movieRequest, ranked }) {
                 <MovieCardRanked
                   number={index + 1}
                   imgUrl={"https://image.tmdb.org/t/p/w500" + item.poster_path}
+                  movieId={item.id}
                 />
               ) : (
                 <MovieCard
                   imgUrl={"https://image.tmdb.org/t/p/w500" + item.poster_path}
+                  movieId={item.id}
                 />
               );
             })
