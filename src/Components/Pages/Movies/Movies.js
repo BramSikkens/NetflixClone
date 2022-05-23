@@ -1,10 +1,6 @@
-import {
-  Link,
-  useLocation
-} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Banner from "../../Banner/Banner";
 import MovieRow from "../../MovieRow/MovieRow";
-
 
 function Movies() {
   let location = useLocation();
@@ -24,16 +20,27 @@ function Movies() {
       </Link>
       <MovieRow
         title="Popular"
-        movieRequest="https://api.themoviedb.org/3/movie/popular?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US&page=2"
+        movieRequest={
+          "https://api.themoviedb.org/3/movie/popular?api_key=" +
+          process.env.REACT_APP_TMDBKEY +
+          "&language=en-US&page=2"
+        }
         ranked
       />
       <MovieRow
         title="Trending This Week"
-        movieRequest="https://api.themoviedb.org/3/trending/all/week?api_key=4582beef3f9c4c12cf6a2cc07d83ce49"
+        movieRequest={
+          "https://api.themoviedb.org/3/trending/all/week?api_key=" +
+          process.env.REACT_APP_TMDBKEY
+        }
       />
       <MovieRow
         title="Top Rated"
-        movieRequest="https://api.themoviedb.org/3/movie/top_rated?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US&page=1"
+        movieRequest={
+          "https://api.themoviedb.org/3/movie/top_rated?api_key=" +
+          process.env.REACT_APP_TMDBKEY +
+          "&language=en-US&page=1"
+        }
       />
     </>
   );
