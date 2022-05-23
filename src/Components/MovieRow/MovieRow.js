@@ -37,7 +37,7 @@ export default function MovieRow({ title, movieRequest, ranked }) {
               setX(x + 18 * 5);
             }}
           >
-            Go Left{" "}
+            {"<"}
           </button>
         )}
 
@@ -47,7 +47,7 @@ export default function MovieRow({ title, movieRequest, ranked }) {
             setX(x - 18 * 5);
           }}
         >
-          Go Right
+          {">"}
         </button>
 
         <div style={styles} className="movieCardList">

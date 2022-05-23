@@ -19,7 +19,11 @@ function Banner() {
       {latestMovie && (
         <img
           className="bannerImage"
-          src={"https://image.tmdb.org/t/p/w500" + latestMovie.poster_path}
+          src={
+            (latestMovie.poster_path &&
+              "https://image.tmdb.org/t/p/w500" + latestMovie.poster_path) ||
+            "thecrown.jpg"
+          }
         />
       )}
       {/* <div classname="bannerButtonRow">

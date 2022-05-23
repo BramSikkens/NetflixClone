@@ -18,9 +18,19 @@
 .translateButton {
   height: 10vw;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.062);
+  background-color: rgba(0, 0, 0, 0.322);
   z-index: 5;
-  color: white;
+  color: rgba(255, 255, 255, 0.253);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: bold;
+  width: 4vw;
+}
+
+.translateButton:hover {
+  background-color: rgba(0, 0, 0, 0.842);
+  color: rgb(255, 255, 255);
 }
 
 .right {
