@@ -15,10 +15,13 @@ function MoreInfoOverlay(props) {
     fetch(
       "https://api.themoviedb.org/3/movie/" +
         movieId +
-        "?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US"
+        "?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US&append_to_response=videos"
     )
       .then((res) => res.json())
-      .then((result) => setMovieDetail(result));
+      .then((result) => {
+        setMovieDetail(result);
+        console.log(result);
+      });
 
     fetch(
       "https://api.themoviedb.org/3/movie/" +
@@ -36,9 +39,16 @@ function MoreInfoOverlay(props) {
   return (
     <div className="MoreInfoOverlay">
       <div className="MoreInfoContainer">
-        <img
-          src={"https://image.tmdb.org/t/p/w500" + movieDetail.poster_path}
-        />
+        {movieDetail?.videos?.results[0] && (
+          <iframe
+            allow="autoplay; encrypted-media"
+            src={
+              "https://www.youtube.com/embed/" +
+              movieDetail?.videos?.results[0].key +
+              "?autoplay=1&controls=0&rel=0"
+            }
+          ></iframe>
+        )}
         <div className="MoreInfoContent">
           <div>
             <button onClick={onDismiss}>Close</button>
@@ -48,6 +58,7 @@ function MoreInfoOverlay(props) {
           <div>
             <b>Release Date: {movieDetail.release_date}</b>
           </div>
+
           <div>
             <h2>More Like This</h2>
             <div className="MoreLikeThisCardContainer">

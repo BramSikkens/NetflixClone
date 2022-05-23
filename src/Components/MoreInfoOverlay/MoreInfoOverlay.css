@@ -37,3 +37,9 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
+iframe {
+  width: 100%;
+  height: 30vw;
+  border: none;
+}
