@@ -1,0 +1,35 @@
+.loginPage {
+  width: 100%;
+  height: 110vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../../../../public/NetflixBackground.jpeg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginBox {
+  width: 30vw;
+  height: 500px;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  padding: 5%;
+}
+
+.loginBox h2 {
+  color: white;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.signInButton {
+  background-color: red;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 3% 0%;
+  border-radius: 7px;
+}

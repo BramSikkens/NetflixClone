@@ -11,6 +11,7 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
+import Login from "./Components/Pages/Login/Login";
 
 function App() {
   let location = useLocation();
@@ -25,6 +26,7 @@ function App() {
       <Navbar />
       <Routes location={state?.backgroundLocation || location}>
         <Route path="/" element={<Movies />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
 
       {/* Show the modal when a `backgroundLocation` is set */}

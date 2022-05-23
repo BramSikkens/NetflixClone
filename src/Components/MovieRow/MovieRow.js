@@ -8,6 +8,11 @@ export default function MovieRow({ title, movieRequest, ranked }) {
     items: [],
   });
 
+  const [x, setX] = useState(0);
+  let styles = {
+    transform: `translate(${x}vw`,
+  };
+
   useEffect(() => {
     fetch(movieRequest)
       .then((res) => res.json())
@@ -25,7 +30,27 @@ export default function MovieRow({ title, movieRequest, ranked }) {
       <h2 className="rowTitle">{title || "No Title"}</h2>
 
       <div>
-        <div className="movieCardList">
+        {x < 0 && (
+          <button
+            className="translateButton"
+            onClick={() => {
+              setX(x + 18 * 5);
+            }}
+          >
+            Go Left{" "}
+          </button>
+        )}
+
+        <button
+          className="translateButton right"
+          onClick={() => {
+            setX(x - 18 * 5);
+          }}
+        >
+          Go Right
+        </button>
+
+        <div style={styles} className="movieCardList">
           {movies.loading ? (
             <p>Loading</p>
           ) : (
