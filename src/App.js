@@ -3,7 +3,7 @@ import "./App.css";
 import MoreInfoOverlay from "./Components/MoreInfoOverlay/MoreInfoOverlay";
 import Navbar from "./Components/Navbar/Navbar";
 import Movies from "./Components/Pages/Movies/Movies";
-
+import { useSelector, useDispatch } from "react-redux";
 import {
   Outlet,
   Link,
@@ -12,9 +12,10 @@ import {
   useParams,
 } from "react-router-dom";
 import Login from "./Components/Pages/Login/Login";
-
+import { ProtectedRoute } from "./Components/Router/ProtectedRoute";
 function App() {
   let location = useLocation();
+  const user = useSelector((state) => state.authentication.user);
 
   // The `backgroundLocation` state is the location that we were at when one of
   // the gallery links was clicked. If it's there, use it as the location for
@@ -25,7 +26,10 @@ function App() {
       {/* <MoreInfoOverlay /> */}
       <Navbar />
       <Routes location={state?.backgroundLocation || location}>
-        <Route path="/" element={<Movies />} />
+        <Route element={<ProtectedRoute user={user} />}>
+          <Route path="/" element={<Movies />} />
+        </Route>
+
         <Route path="/login" element={<Login />} />
       </Routes>
 

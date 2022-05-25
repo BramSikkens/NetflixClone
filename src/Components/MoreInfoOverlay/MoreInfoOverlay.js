@@ -15,7 +15,9 @@ function MoreInfoOverlay(props) {
     fetch(
       "https://api.themoviedb.org/3/movie/" +
         movieId +
-        "?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US&append_to_response=videos"
+        "?api_key=" +
+        process.env.REACT_APP_TMDBKEY +
+        "&language=en-US&append_to_response=videos"
     )
       .then((res) => res.json())
       .then((result) => {
@@ -26,7 +28,9 @@ function MoreInfoOverlay(props) {
     fetch(
       "https://api.themoviedb.org/3/movie/" +
         movieId +
-        "/similar?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US&page=1"
+        "/similar?api_key=" +
+        process.env.REACT_APP_TMDBKEY +
+        "&language=en-US&page=1"
     )
       .then((res) => res.json())
       .then((result) => setSimilarMovies(result.results.splice(0, 6)));

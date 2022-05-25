@@ -6,7 +6,9 @@ function Banner() {
 
   useEffect(() => {
     fetch(
-      "https://api.themoviedb.org/3/movie/latest?api_key=4582beef3f9c4c12cf6a2cc07d83ce49&language=en-US"
+      "https://api.themoviedb.org/3/movie/latest?api_key=" +
+        process.env.REACT_APP_TMDBKEY +
+        "&language=en-US"
     )
       .then((response) => response.json())
       .then((result) => {
