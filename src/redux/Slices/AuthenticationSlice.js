@@ -13,7 +13,7 @@ export const authenticationSlice = createSlice({
       state.user = action.payload;
     },
     signOutRx: (state) => {
-      state = {};
+      state.user = undefined;
     },
   },
 });

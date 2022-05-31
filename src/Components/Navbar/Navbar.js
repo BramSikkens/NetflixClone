@@ -1,6 +1,11 @@
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { signOutRx } from "../../redux/Slices/AuthenticationSlice";
 
 function Navbar() {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.authentication.user);
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -12,6 +17,15 @@ function Navbar() {
         <li className="navItem">New & Popular</li>
         <li className="navItem">My List</li>
       </ul>
+      {user && (
+        <button
+          onClick={() => {
+            dispatch(signOutRx());
+          }}
+        >
+          Sign out
+        </button>
+      )}
     </nav>
   );
 }
